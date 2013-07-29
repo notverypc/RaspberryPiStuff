@@ -1,0 +1,14 @@
+Create the avahi rfb service file:
+
+sudo nano /etc/avahi/services/rfb.service
+
+
+<?xml version="1.0" standalone='no'?>
+<!DOCTYPE service-group SYSTEM "avahi-service.dtd">
+<service-group>
+  <name replace-wildcards="yes">%h</name>
+  <service>
+    <type>_rfb._tcp</type>
+    <port>5901</port>
+  </service>
+</service-group>
