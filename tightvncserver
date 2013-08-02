@@ -1,0 +1,23 @@
+# First configure the user you want to run this under - this will generally be pi, unless you've created your own users
+export USER='pi'
+
+eval cd ~$USER
+
+# Check the state of the command - this'll either be start or stop 
+case "$1" in
+  start)
+    # if it's start, then start vncserver using the details below
+    su $USER -c '/usr/bin/vncserver :1 -geometry 1024x768 -depth 24 -pixelformat rgb565'
+    echo "Starting vncserver for $USER "
+    ;;
+  stop)
+    # if it's stop, then just kill the process
+    pkill Xtightvnc
+    echo "vncserver stopped"
+    ;;
+  *)
+    echo "Usage: /etc/init.d/vncserver {start|stop}"
+    exit 1
+    ;;
+esac
+exit 0
