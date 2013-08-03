@@ -10,7 +10,10 @@ Run the program: ```tightvncserver```
 Start a VNC session: ```vncserver :1 -geometry 1024x728 -depth 24```  
 
 ##VNC - Autostart##
-Use this command to create the required file:
+Use this command to create the required file:  
+```sudo nano /etc/init.d/tightvncserver```   
+Then copy the contents of tightvncserver file.  
+Use this command to set the correct permissions:   
 ```sudo chmod 755 /etc/init.d/tightvncserver```  
 
 Then copy the contents of the tightvncserver
