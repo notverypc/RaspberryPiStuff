@@ -3,3 +3,6 @@ Shutdown:
 
 Disk Space:   
 ```df -h```   
+
+Disk Names:   
+```sudo blkid```   
