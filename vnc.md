@@ -18,7 +18,7 @@ eval cd ~$USER
 case "$1" in
   start)
     # if it's start, then start vncserver using the details below
-    su $USER -c '/usr/bin/vncserver :1 -geometry 1024x768 -depth 24 -pixelformat rgb565'
+    su $USER -c '/usr/bin/vncserver :1 -geometry 1024x768 -depth 16 -pixelformat rgb565'
     echo "Starting vncserver for $USER "
     ;;
   stop)
