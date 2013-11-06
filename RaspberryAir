@@ -1,0 +1,26 @@
+sudo su
+cd /etc/init.d
+./shairport stop
+cd
+mv shairport shairport_old
+aptitude install libmodule-build-perl
+git clone https://github.com/njh/perl-net-sdp.git perl-net-sdp
+cd perl-net-sdp
+perl Build.PL
+./Build
+./Build test
+./Build install
+cd
+git clone https://github.com/hendrikw82/shairport.git shairport
+# and the rest is repeating the install instructions from the original post
+cd shairport
+./shairport.pl -a RaspberryPi
+# check it works then Ctrl-C
+make install
+cp shairport.init.sample /etc/init.d/shairport
+cd /etc/init.d
+chmod a+x shairport
+update-rc.d shairport defaults
+nano shairport
+# edit DAEMON_ARGS line: eg DAEMON_ARGS=”-w $PIDFILE -a RaspberryPi”
+./shairport start
