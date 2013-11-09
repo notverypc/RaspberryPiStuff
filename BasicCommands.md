@@ -8,5 +8,5 @@ Disk Names:
 ```sudo blkid```   
 
 Volume Control:   
-```alsamixer```   
+alsamixer
 
