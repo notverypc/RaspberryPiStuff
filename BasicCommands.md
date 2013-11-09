@@ -6,3 +6,6 @@ Disk Space:
 
 Disk Names:   
 ```sudo blkid```   
+
+Adjust Volume:
+```alsamixer```
