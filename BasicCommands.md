@@ -8,5 +8,5 @@ Disk Names:
 ```sudo blkid```   
 
 Adjust Volume:
-```alsamixer```  
+```alsamixer```   
 
